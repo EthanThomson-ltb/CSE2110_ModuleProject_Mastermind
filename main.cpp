@@ -23,7 +23,7 @@ bool inputVal(int inMain, int in1, int in2, int in3) {
 
 int main() {
     cout << "Welcome to Mastermind!" << endl << "I am thinking of a 3 digit number, no repeated digits." << endl <<
-            "Can you guess what I'm thinking? You have 10 guesses..." << endl;
+            "Can you guess what I'm thinking? You have 10 guesses...";
 
     srand(time(nullptr));
     int ran1 = 1 + rand () % 9;
@@ -37,7 +37,7 @@ int main() {
     int i = 0;
     while (winCondition(in1, in2, in3, ran1, ran2, ran3) == false) {
 
-        cout << endl << "Enter your 3 digit guess using 1-9 only: ";
+        cout << endl << endl << "Enter your 3 digit guess using 1-9 only: ";
         cin >> inMain;
         i++;
         in3 = inMain % 10;
@@ -48,7 +48,7 @@ int main() {
 
 
         } else {
-            cout << "Please enter as a valid number" << endl;
+            cout << "Please enter as a valid number";
         }
     }
     cout << endl << endl << "Congratulations! You took " << i << " guesses.";
