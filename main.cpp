@@ -41,16 +41,14 @@ void printColours(int in1,int in2,int in3, int ran1, int ran2, int ran3) {
     if (in3 == ran1 || in3 == ran2) {
         cout << "Yellow ";
     }
-    if (in1 != ran1 && in1 != ran2 && in1 != ran3 && in2 != ran1 && in2 != ran2 && in2 != ran3 && in3 != ran1 && in3 != ran2 && in3 != ran3) {
+    if (in1 != ran1 && in1 != ran2 && in1 != ran3 && in2 != ran1 && in2 != ran2 && in2 != ran3 && in3 != ran1 && in3 != ran2 && in3 != ran3) { //Holy long if statement batman
         cout << "Red";
     }
 }
 
-
 int main() {
     cout << "Welcome to Mastermind!" << endl << "I am thinking of a 3 digit number, no repeated digits." << endl <<
             "Can you guess what I'm thinking? You have 10 guesses...";
-
 
     //Generates three random digits with no repeated digits
     //I wanted to make this a function, but it's weirdly simpler when it stays in the main.
@@ -89,6 +87,7 @@ int main() {
             cout << "Please enter as a valid number";
         }
     }
+    //The player wins woooo!
     cout << endl << endl << "Congratulations! You took " << i << " guesses.";
 
     return 0;
