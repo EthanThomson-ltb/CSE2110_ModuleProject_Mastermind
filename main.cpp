@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdlib>
 #include <ctime>
 using namespace std;
 
@@ -23,6 +22,30 @@ bool inputVal(int inMain, int in1, int in2, int in3) {
 }
 
 //Prints the "Green-Yellow_Red" thingymabob
+void printColours(int in1,int in2,int in3, int ran1, int ran2, int ran3) {
+    if (in1 == ran1) {
+        cout << "Green ";
+    }
+    if (in2 == ran2) {
+        cout << "Green ";
+    }
+    if (in3 == ran3) {
+        cout << "Green ";
+    }
+    if (in1 == ran2 || in1 == ran3) {
+        cout << "Yellow ";
+    }
+    if (in2 == ran1 || in2 == ran3) {
+        cout << "Yellow ";
+    }
+    if (in3 == ran1 || in3 == ran2) {
+        cout << "Yellow ";
+    }
+    if (in1 != ran1 && in1 != ran2 && in1 != ran3 && in2 != ran1 && in2 != ran2 && in2 != ran3 && in3 != ran1 && in3 != ran2 && in3 != ran3) {
+        cout << "Red";
+    }
+}
+
 
 int main() {
     cout << "Welcome to Mastermind!" << endl << "I am thinking of a 3 digit number, no repeated digits." << endl <<
@@ -30,7 +53,7 @@ int main() {
 
 
     //Generates three random digits with no repeated digits
-    //I wanted to make this a function, but it's weirdly simpler when it's not a function.
+    //I wanted to make this a function, but it's weirdly simpler when it stays in the main.
     srand(time(nullptr));
     int ran1 = 1 + rand () % 9;
     int ran2 = 1 + rand () % 9;
@@ -41,7 +64,6 @@ int main() {
     while (ran3 == ran1 || ran3 == ran2) {
         ran3 = 1 + rand () % 9;
     }
-    cout << ran1 << " " << ran2 << " " << ran3 << endl;
 
     //Main game loop
     int in1 = 0,in2 = 0,in3 = 0;
@@ -61,7 +83,7 @@ int main() {
             cout << "Guess " << i << ": " << inMain << "    ";
 
             //Prints the "Green-Yellow_Red" thingymabob
-
+            printColours(in1, in2, in3, ran1, ran2, ran3);
 
         } else {
             cout << "Please enter as a valid number";
